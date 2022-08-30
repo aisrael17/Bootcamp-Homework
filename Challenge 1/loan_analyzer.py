@@ -82,6 +82,7 @@ if present_value >= loan_cost:
     print("The loan is worth at least the cost to buy it.")
 else:
     print("The loan is too expensive and not worth the price.")
+print(f"Present Value: {present_value}\nPrice: {loan_cost}")
 
 """Part 3: Perform Financial Calculations.
 
@@ -191,9 +192,9 @@ output_path = Path("inexpensive_loans.csv")
 with open(output_path, 'w', newline='') as csv_file:
 
     # Create csv writer
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(header)
+    csvwriter = csv.writer(csv_file)
+    csvwriter.writerow(header)
 
     # Loop through inexpensive loans and append to csv file
     for loan in inexpensive_loans:
-        csv_writer.writerow(loan.values())
+        csvwriter.writerow(loan.values())
